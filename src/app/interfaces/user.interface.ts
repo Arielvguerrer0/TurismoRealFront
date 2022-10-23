@@ -1,5 +1,6 @@
 export interface Usuario {
-    NOM_USUARIO: number;
+    ID_USUARIO: number;
+    NOM_USUARIO: string;
     CORREO_USUARIO:     string;
     CONTRASENIA: string;
     ESTADO_USUARIO: number;

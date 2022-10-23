@@ -14,12 +14,19 @@ export class AuthService{
     }
 
     buscarUsuario(correo): Observable<Usuario[]>{
-        return this.http.get<Usuario[]>(`api/usuario/${correo}`) 
+        return this.http.get<Usuario[]>(`api/usuariocorreo/${correo}`) 
+    }
+
+    buscarUsuarioid(id): Observable<Usuario[]>{
+        return this.http.get<Usuario[]>(`api/usuario/${id}`) 
     }
 
     agregarUsuario( usuario: Usuario ): Observable<any>{
-        console.log('USUARIO', usuario);
         return this.http.post<any>(`api/usuario/crear/`, usuario);
+    }
+
+    modificarUsuario( usuario: any, id ): Observable<any>{
+        return this.http.post<any>(`api/usuario/modificar/${id}`, usuario);
     }
 
 }

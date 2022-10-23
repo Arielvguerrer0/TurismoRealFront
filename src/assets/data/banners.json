@@ -1,8 +1,8 @@
 [
-    { "title": "Viña del mar", "subtitle": "Now starting at $1299", "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/120000/120999-Vina-Del-Mar-And-Vicinity.jpg" },
+    { "title": "Viña del mar", "subtitle": "Visita la quinta Region", "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/120000/120999-Vina-Del-Mar-And-Vicinity.jpg" },
     { "title": "", "subtitle": "Special for today", "image": "https://i3.visitchile.com/img/GalleryContent/398/La_Serena.jpg" },
-    { "title": "Pucón", "subtitle": "Special for today", "image": "https://images.unsplash.com/photo-1463820048975-a3b50e6d991d?ixlib=rb-0.3.5&s=6cfe9709e4c45ab8b4f875c84a2746ed&auto=format&fit=crop&w=500&q=80" },
-    { "title": "La Serena", "subtitle": "New Arrivals On Sale", "image": "https://i3.visitchile.com/img/GalleryContent/398/La_Serena.jpg" },
-    { "title": "Pucon", "subtitle": "Now starting at $89", "image": "https://www.chileandtravelmagazine.com/wp-content/uploads/2019/08/Pucon-web.jpg" },    
-    { "title": "Puerto Varas", "subtitle": "Now starting at $1799", "image": "https://puertovaras.org/wp-content/themes/pto_varas-2018-06/images/5.jpg" }
+    { "title": "Pucón", "subtitle": "Escapadas al Sur", "image": "https://images.unsplash.com/photo-1463820048975-a3b50e6d991d?ixlib=rb-0.3.5&s=6cfe9709e4c45ab8b4f875c84a2746ed&auto=format&fit=crop&w=500&q=80" },
+    { "title": "La Serena", "subtitle": "Visita el norte", "image": "https://i3.visitchile.com/img/GalleryContent/398/La_Serena.jpg" },
+    { "title": "Pucon", "subtitle": "Escapadas al Sur", "image": "https://www.chileandtravelmagazine.com/wp-content/uploads/2019/08/Pucon-web.jpg" },    
+    { "title": "Puerto Varas", "subtitle": "Escapadas al Sur", "image": "https://puertovaras.org/wp-content/themes/pto_varas-2018-06/images/5.jpg" }
 ]

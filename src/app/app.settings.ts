@@ -14,7 +14,7 @@ export class Settings {
 export class AppSettings {
     public settings = new Settings(
         'Turismo Real',  // theme name
-        'grey',     // green, blue, red, pink, purple, grey
+        'blue',     // green, blue, red, pink, purple, grey
         false,       // true = rtl, false = ltr
         true,        // adminSidenavIsOpened
         true,        // adminSidenavIsPinned 

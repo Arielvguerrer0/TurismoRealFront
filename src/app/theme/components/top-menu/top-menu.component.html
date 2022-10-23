@@ -25,47 +25,41 @@
         </span>
     </mat-menu> -->
 
-    <span fxShow="false" fxShow.gt-sm>
+    <!-- <span fxShow="false" fxShow.gt-sm>
         <a mat-button routerLink="/compare">{{ 'COMPARE' | translate }} <span *ngIf="settings.rtl">&rlm;</span>({{appService.Data.compareList.length}})</a>
         <a mat-button routerLink="/wishlist">{{ 'WISHLIST' | translate }} <span *ngIf="settings.rtl">&rlm;</span>({{appService.Data.wishList.length}})</a>
-    </span>  
+    </span>   -->
 
     <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger">
         <mat-icon class="mat-icon-sm account-icon">person</mat-icon> 
-        <span fxShow="false" fxShow.gt-sm>{{ 'CUENTA' | translate }}</span> 
+        <span fxShow="false" fxShow.gt-sm>{{ user ? user.NOM_USUARIO : null | translate }}</span> 
         <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
     </a>
+    <div>
+
+    </div>
     <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">
         <span (mouseleave)="accountMenuTrigger.closeMenu()">
             <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">                   
-                <img src="assets/images/others/user.jpg" alt="user-image" width="50">
-                <p>Emilio Verdines <br> <small>emilio_v <span *ngIf="settings.rtl">&rlm;</span>(152<mat-icon class="mat-icon-xs">star</mat-icon>)</small></p>
+                <!-- <img src="assets/images/others/user.jpg" alt="user-image" width="50"> -->
+                <p>{{ user ? user.NOM_USUARIO : null }} <br> <small>{{ user ? user.CORREO_USUARIO : null }} <span *ngIf="settings.rtl">&rlm;</span></small></p>
             </div>
             <div class="divider"></div>
             <a mat-menu-item routerLink="/account"> 
                 <mat-icon class="mat-icon-sm">settings</mat-icon>
-                <span>Account Settings</span> 
-            </a>
-            <a mat-menu-item routerLink="/compare" fxHide="false" fxHide.gt-sm>
-                <mat-icon class="mat-icon-sm">compare</mat-icon>
-                <span>Compare <span *ngIf="settings.rtl">&rlm;</span>({{appService.Data.compareList.length}})</span> 
-            </a>
-            <a mat-menu-item routerLink="/wishlist" fxHide="false" fxHide.gt-sm>
-                <mat-icon class="mat-icon-sm">favorite</mat-icon>
-                <span>Wishlist <span *ngIf="settings.rtl">&rlm;</span>({{appService.Data.wishList.length}})</span>
-            </a>
-            <a mat-menu-item routerLink="/"> 
-                <mat-icon class="mat-icon-sm">lock</mat-icon>
-                <span>Lock screen</span> 
-            </a>
-            <a mat-menu-item routerLink="/"> 
-                <mat-icon class="mat-icon-sm">help</mat-icon>
-                <span>Help</span> 
+                <span>Configuracion de la cuenta</span> 
             </a>
             <div class="divider"></div>
-            <a mat-menu-item routerLink="/sign-in"> 
+            <div >
+
+            </div>
+            <a *ngIf="this.user" mat-menu-item routerLink="/sign-in" (click)="DeleteSesion()"> 
                 <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
-                <span>{{ 'LOGOUT' | translate }}</span> 
+                <span>{{ 'Salir' | translate }}</span> 
+            </a>
+            <a *ngIf="!this.user" mat-menu-item routerLink="/sign-in"> 
+                <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
+                <span>{{ 'Iniciar Sesion' | translate }}</span> 
             </a>
         </span>
     </mat-menu>    

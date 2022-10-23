@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
 
     user: Usuario;
     passwordValid: boolean = false;
+    public usuarios: any;
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -42,12 +43,12 @@ export class SignInComponent implements OnInit {
       'confirmPassword': ['', Validators.required]
     },{validator: matchingPasswords('password', 'confirmPassword')});
 
-    /* this.authService.listarUsuarios()
-      .subscribe( (usuarios) => {
-        console.log('LOS USUARIOS', usuarios)
+    this.authService.listarUsuarios()
+      .subscribe( (usuarios: []) => {
+        this.usuarios = usuarios;
       }, (err) => {
         console.log('HUBO UN ERROR', err)
-      }); */
+      });
   }
 
   validarContrasena() {
@@ -62,26 +63,42 @@ export class SignInComponent implements OnInit {
       }
   };
 
+  // funcion para validar que exista un usuario
+  userExits( email ) {
+    // buscamos el correo con todos los usuarios existentes.
+    const usuario = this.usuarios.find(user => user.CORREO_USUARIO === email )
+    if(usuario){ 
+      // si el usuario existe la respuesta no va a existir.
+      return false;
+    }
+    return true;
+  }
+
   public onLoginFormSubmit(values:Object):void {
     const { email } = this.loginForm.value;
+    // validamos que exista el usuario
+    const resp = this.userExits(email)
+    if (resp) {
+      this.snackBar.open(`${'no existe usuario con el correo'} ${email}`, '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
+      return;
+    }
+    // llamamos al servicio.
     this.authService.buscarUsuario(email)
       .subscribe( ( usuario) => {
         if(usuario) {
           this.user = usuario[0];
           const resp = this.validarContrasena()
           if(!resp) {
-            console.log('contraseña no valida');
+            this.snackBar.open(`${'la contraseña no coincide'}`, '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
             return;
           }
+          //Guardamos el usuario logeado en el local storage
+          localStorage.setItem("usuario",JSON.stringify(this.user));
           this.router.navigate(['/']);
         }
       }, (err) => {
-        console.log(err);
+        return
       });
-    /* if (this.loginForm.valid) {
-      this.router.navigate(['/']);
-    } */
-
   }
 
   
@@ -101,6 +118,7 @@ export class SignInComponent implements OnInit {
     }); */
 
     const user = {
+      ID_USUARIO: null,
       NOM_USUARIO: name,
       CORREO_USUARIO: email,
       CONTRASENIA: password,
