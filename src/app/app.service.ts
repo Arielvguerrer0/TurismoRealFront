@@ -53,7 +53,7 @@ export class AppService {
         }
         else{
             this.Data.compareList.push(product);
-            message = 'The product ' + product.name + ' has been added to comparison list.'; 
+            message = 'Departamento' + product.name + ' has been added to comparison list.'; 
             status = 'success';  
         }
         this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
@@ -91,7 +91,7 @@ export class AppService {
             this.Data.totalCartCount = this.Data.totalCartCount + product.cartCount;
         });
 
-        message = 'The product ' + product.name + ' has been added to cart.'; 
+        message = 'El Departamento ' + product.name + ' Fue añadido al carro.'; 
         status = 'success';          
         this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
     }
@@ -376,18 +376,18 @@ export class AppService {
 
     public getMonths(){
         return [
-            { value: '01', name: 'January' },
-            { value: '02', name: 'February' },
-            { value: '03', name: 'March' },
-            { value: '04', name: 'April' },
-            { value: '05', name: 'May' },
-            { value: '06', name: 'June' },
-            { value: '07', name: 'July' },
-            { value: '08', name: 'August' },
-            { value: '09', name: 'September' },
-            { value: '10', name: 'October' },
-            { value: '11', name: 'November' },
-            { value: '12', name: 'December' }
+            { value: '01', name: 'Enero' },
+            { value: '02', name: 'Febrero' },
+            { value: '03', name: 'Marzo' },
+            { value: '04', name: 'Abril' },
+            { value: '05', name: 'Mayo' },
+            { value: '06', name: 'Junio' },
+            { value: '07', name: 'Julio' },
+            { value: '08', name: 'Agosto' },
+            { value: '09', name: 'Septiembre' },
+            { value: '10', name: 'Octubre' },
+            { value: '11', name: 'Noviembre' },
+            { value: '12', name: 'Diciembre' }
         ]
     }
 

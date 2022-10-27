@@ -50,11 +50,11 @@
            
     </mat-menu> -->
     
-    <a mat-button [routerLink]="['/products', 'jewellery']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">Departamentos</a>
-    <a mat-button [routerLink]="['/products', 'electronics']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">Tours</a>
-    <a mat-button [routerLink]="['/products', 'sports']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}"></a> 
+    <a mat-button [routerLink]="['/products', 'departamentos']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">Departamentos</a>
+    <a mat-button [routerLink]="['/products', 'Tours']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">Tours</a>
+   <!--  <a mat-button [routerLink]="['/products', 'sports']" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}"></a>  -->
 
-    <a mat-button [matMenuTriggerFor]="pages">{{ 'NAV.PAGES' | translate }}<mat-icon class="caret">arrow_drop_down</mat-icon></a>
+    <!-- <a mat-button [matMenuTriggerFor]="pages">{{ 'NAV.PAGES' | translate }}<mat-icon class="caret">arrow_drop_down</mat-icon></a>
     <mat-menu #pages="matMenu" [overlapTrigger]="false" class="app-dropdown">  
         <a mat-menu-item routerLink="/contact" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.CONTACT' | translate }}</a> 
         <a mat-menu-item [matMenuTriggerFor]="shop">{{ 'NAV.SHOP' | translate }}</a>
@@ -62,7 +62,7 @@
         <a mat-menu-item routerLink="/404">{{ 'NAV.404_PAGE' | translate }}</a>
         <a mat-menu-item routerLink="/landing">{{ 'NAV.LANDING' | translate }}</a>
         <a mat-menu-item [matMenuTriggerFor]="others">{{ 'NAV.OTHERS' | translate }}</a>
-    </mat-menu>
+    </mat-menu> -->
 
     <mat-menu #shop="matMenu" class="app-dropdown"> 
         <a mat-menu-item routerLink="/products" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.ALL_PRODUCTS' | translate }}</a> 
@@ -78,8 +78,8 @@
         <a mat-menu-item>Menu item</a>
     </mat-menu>
     
-    <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.CONTACT' | translate }}</a>
-    <a mat-button routerLink="/admin" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.ADMIN' | translate }}</a>
+    <!-- <a mat-button routerLink="/contact" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.CONTACT' | translate }}</a>
+    <a mat-button routerLink="/admin" routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.ADMIN' | translate }}</a> -->
 
 </mat-toolbar>
 

@@ -1,30 +1,30 @@
 [    
     { 
         "id": 1,
-        "name": "Keyboard",
+        "name": "Viña Del mar",
         "images": [
             {
-                "small": "assets/images/products/keyboard/1-small.png",
-                "medium": "assets/images/products/keyboard/1-medium.png",
-                "big": "assets/images/products/keyboard/1-big.png"
+                "small": "assets/images/products/keyboard/vina3.png",
+                "medium": "assets/images/products/keyboard/vina3.png",
+                "big": "assets/images/products/keyboard/vina3.png"
             },
             {
-                "small": "assets/images/products/keyboard/2-small.png",
-                "medium": "assets/images/products/keyboard/2-medium.png",
-                "big": "assets/images/products/keyboard/2-big.png"
+                "small": "assets/images/products/keyboard/vina3.png",
+                "medium": "assets/images/products/keyboard/vina2.png",
+                "big": "assets/images/products/keyboard/vina3.png"
             },
             {
-                "small": "assets/images/products/keyboard/3-small.png",
-                "medium": "assets/images/products/keyboard/3-medium.png",
-                "big": "assets/images/products/keyboard/3-big.png"
+                "small": "assets/images/products/keyboard/vina3.png",
+                "medium": "assets/images/products/keyboard/vina1.png",
+                "big": "assets/images/products/keyboard/vina3.png"
             }
         ],
         "oldPrice": null,
-        "newPrice": 175,
+        "newPrice": 45000,
         "discount": null,
         "ratingsCount": 4,
         "ratingsValue": 350,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
+        "description": "Nuestro depto está finamente decorado y lleno de detalles que realzan los espacios. Contamos con todo lo necesario para que tu estadía sea agradable.",
         "availibilityCount": 5,
         "cartCount": 0,
         "color": ["#5C6BC0","#66BB6A","#90A4AE"],
@@ -34,45 +34,30 @@
     },
     { 
         "id": 2,
-        "name": "PC All-in-One",
+        "name": "La Serena",
         "images": [
             {
-                "small": "assets/images/products/pc/1-small.png",
-                "medium": "assets/images/products/pc/1-medium.png",
-                "big": "assets/images/products/pc/1-big.png"
+                "small": "assets/images/products/pc/serena1.png",
+                "medium": "assets/images/products/pc/serena2.png",
+                "big": "assets/images/products/pc/serena1.png"
             },
             {
-                "small": "assets/images/products/pc/2-small.png",
-                "medium": "assets/images/products/pc/2-medium.png",
+                "small": "assets/images/products/pc/serena1.png",
+                "medium": "assets/images/products/pc/serena3.png",
                 "big": "assets/images/products/pc/2-big.png"
             },
             {
-                "small": "assets/images/products/pc/3-small.png",
-                "medium": "assets/images/products/pc/3-medium.png",
+                "small": "assets/images/products/pc/serena1.png",
+                "medium": "assets/images/products/pc/serena1.png",
                 "big": "assets/images/products/pc/3-big.png"
-            },
-            {
-                "small": "assets/images/products/pc/4-small.png",
-                "medium": "assets/images/products/pc/4-medium.png",
-                "big": "assets/images/products/pc/4-big.png"
-            },
-            {
-                "small": "assets/images/products/pc/5-small.png",
-                "medium": "assets/images/products/pc/5-medium.png",
-                "big": "assets/images/products/pc/5-big.png"
-            },
-            {
-                "small": "assets/images/products/pc/6-small.png",
-                "medium": "assets/images/products/pc/6-medium.png",
-                "big": "assets/images/products/pc/6-big.png"
             }
         ],
-        "oldPrice": 2510,
-        "newPrice": 2179.99,
+        "oldPrice": null,
+        "newPrice": 45000,
         "discount": 15,
         "ratingsCount": 8,
         "ratingsValue": 800,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
+        "description": "Un inmueble recién construido, con acceso privado a instalaciones propias del recinto, piscina, juegos, restaurante, estacionamiento. Un apartamento con dos habitaciones, una cama matrimonial.",
         "availibilityCount": 3,
         "cartCount": 0,
         "color": ["#1D1D1D","#DADADA","#597087"],
@@ -82,30 +67,30 @@
     },    
     { 
         "id": 3,
-        "name": "Headset",
+        "name": "Pucon",
         "images": [
             {
-                "small": "assets/images/products/headset/1-small.png",
-                "medium": "assets/images/products/headset/1-medium.png",
+                "small": "assets/images/products/headset/pucon1.png",
+                "medium": "assets/images/products/headset/pucon1.png",
                 "big": "assets/images/products/headset/1-big.png"
             },
             {
-                "small": "assets/images/products/headset/2-small.png",
-                "medium": "assets/images/products/headset/2-medium.png",
+                "small": "assets/images/products/headset/puconl.png",
+                "medium": "assets/images/products/headset/pucon2.png",
                 "big": "assets/images/products/headset/2-big.png"
             },
             {
-                "small": "assets/images/products/headset/3-small.png",
-                "medium": "assets/images/products/headset/3-medium.png",
+                "small": "assets/images/products/headset/puconl.png",
+                "medium": "assets/images/products/headset/pucon3.png",
                 "big": "assets/images/products/headset/3-big.png"
             }
         ],
         "oldPrice": null,
-        "newPrice": 30,
+        "newPrice": 45000,
         "discount": null,
         "ratingsCount": 12,
         "ratingsValue": 1150,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
+        "description": "Este departamento tiene una vista al lago insuperable. Su emplazamiento en la quebrada sobre pilotes y sus amplios ventanales generan la sensación de estar flotando sobre el mar.",
         "availibilityCount": 5,
         "cartCount": 0,
         "color": ["#474543","#8B8B8B","#FFFFFF"],
@@ -115,116 +100,35 @@
     },   
     { 
         "id": 4,
-        "name": "ProBook",
+        "name": "Puerto Varas",
         "images": [
             {
-                "small": "assets/images/products/probook/1-small.png",
-                "medium": "assets/images/products/probook/1-medium.png",
+                "small": "assets/images/products/probook/ptovaras1.png",
+                "medium": "assets/images/products/probook/ptovaras1.png",
                 "big": "assets/images/products/probook/1-big.png"
             },
             {
-                "small": "assets/images/products/probook/2-small.png",
-                "medium": "assets/images/products/probook/2-medium.png",
-                "big": "assets/images/products/probook/2-big.png"
+                "small": "assets/images/products/probook/ptovaras1.png",
+                "medium": "assets/images/products/probook/ptovaras2.png",
+                "big": "assets/images/products/probook/ptovaras3.png"
             },
             {
-                "small": "assets/images/products/probook/3-small.png",
-                "medium": "assets/images/products/probook/3-medium.png",
-                "big": "assets/images/products/probook/3-big.png"
-            },
-            {
-                "small": "assets/images/products/probook/4-small.png",
-                "medium": "assets/images/products/probook/4-medium.png",
-                "big": "assets/images/products/probook/4-big.png"
-            },
-            {
-                "small": "assets/images/products/probook/5-small.png",
-                "medium": "assets/images/products/probook/5-medium.png",
-                "big": "assets/images/products/probook/5-big.png"
+                "small": "assets/images/products/probook/ptovaras1.png",
+                "medium": "assets/images/products/probook/ptovaras3.png",
+                "big": "assets/images/products/probook/ptovaras3.png"
             }
         ],
-        "oldPrice": 1655,
-        "newPrice": 1379.99,
+        "oldPrice": null,
+        "newPrice": 45000,
         "discount": 20,
         "ratingsCount": 6,
         "ratingsValue": 500,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
+        "description": "Este departamento tiene una vista al lago insuperable. Su emplazamiento en la quebrada sobre pilotes y sus amplios ventanales generan la sensación de estar flotando sobre el mar. ",
         "availibilityCount": 2,
         "cartCount": 0,
         "color": ["#4C4C4C","#B6B7B9"],
         "size": ["13.3''","15.4''","17''"],
         "weight": 2150,
-        "categoryId": 100
-    },
-    { 
-        "id": 5,
-        "name": "Phone",
-        "images": [
-            {
-                "small": "assets/images/products/phone/1-small.png",
-                "medium": "assets/images/products/phone/1-medium.png",
-                "big": "assets/images/products/phone/1-big.png"
-            },
-            {
-                "small": "assets/images/products/phone/2-small.png",
-                "medium": "assets/images/products/phone/2-medium.png",
-                "big": "assets/images/products/phone/2-big.png"
-            }
-        ],
-        "oldPrice": null,
-        "newPrice": 476,
-        "discount": null,
-        "ratingsCount": 2,
-        "ratingsValue": 200,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
-        "availibilityCount": 0,
-        "cartCount": 0,
-        "color": ["#1E1B00","#898E8B"],
-        "size": null,
-        "weight": 3250,
-        "categoryId": 100
-    },
-    { 
-        "id": 6,
-        "name": "All-in-One Printer",
-        "images": [
-            {
-                "small": "assets/images/products/printer/1-small.png",
-                "medium": "assets/images/products/printer/1-medium.png",
-                "big": "assets/images/products/printer/1-big.png"
-            },
-            {
-                "small": "assets/images/products/printer/2-small.png",
-                "medium": "assets/images/products/printer/2-medium.png",
-                "big": "assets/images/products/printer/2-big.png"
-            },
-            {
-                "small": "assets/images/products/printer/3-small.png",
-                "medium": "assets/images/products/printer/3-medium.png",
-                "big": "assets/images/products/printer/3-big.png"
-            },
-            {
-                "small": "assets/images/products/printer/4-small.png",
-                "medium": "assets/images/products/printer/4-medium.png",
-                "big": "assets/images/products/printer/4-big.png"
-            },
-            {
-                "small": "assets/images/products/printer/5-small.png",
-                "medium": "assets/images/products/printer/5-medium.png",
-                "big": "assets/images/products/printer/5-big.png"
-            }
-        ],
-        "oldPrice": null,
-        "newPrice": 450,
-        "discount": null,
-        "ratingsCount": 4,
-        "ratingsValue": 300,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue eleifend nulla vel rutrum. Donec tempus metus non erat vehicula, vel hendrerit sem interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
-        "availibilityCount": 3,
-        "cartCount": 0,
-        "color": ["#464646","#F3F3F3","#E6E6E6"],
-        "size": null,
-        "weight": 9750,
         "categoryId": 100
     }
 ]

@@ -18,11 +18,11 @@
         <div fxFlex="100" fxFlex.gt-sm="50" ngClass.gt-sm="px-2 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2"> 
             <h2>{{product.name}}</h2>
             <div class="py-1 lh">
-                <p><span class="text-muted fw-500">Category: </span><span>{{ ( appService.Data.categories | filterById : product.categoryId )?.name }}</span></p>
-                <p><span class="text-muted fw-500">Availibility: </span><span>{{ (product.availibilityCount > 0) ? 'In stock':'Unavailable'}}</span></p>
+               <!--  <p><span class="text-muted fw-500">Category: </span><span>{{ ( appService.Data.categories | filterById : product.categoryId )?.name }}</span></p>
+                <p><span class="text-muted fw-500">Availibility: </span><span>{{ (product.availibilityCount > 0) ? 'In stock':'Unavailable'}}</span></p> -->
             </div>                 
             <div class="py-1">
-                <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'row'"></app-rating>
+                <!-- <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'row'"></app-rating> -->
             </div>
             <p class="py-1 text-muted lh">{{product.description}}</p>
             <div fxLayoutAlign="end center" class="text-muted">                 

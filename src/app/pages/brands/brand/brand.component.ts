@@ -20,7 +20,7 @@ export class BrandComponent implements OnInit {
   public viewCol: number = 25;
   public counts = [12, 24, 36];
   public count:any;
-  public sortings = ['Sort by Default', 'Best match', 'Lowest first', 'Highest first'];
+  public sortings = ['Ordernar por', 'Mas comprados', 'Menor precio', ''];
   public sort:any;
   public products: Array<Product> = [];
   public categories:Category[];

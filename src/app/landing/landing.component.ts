@@ -20,12 +20,12 @@ export class LandingComponent implements OnInit {
 
   public getDemo(number){
     if(number == 1){ 
-      this.settings.theme = 'green';
+      this.settings.theme = 'blue';
       this.settings.rtl = false;
       this.router.navigate(['/']);
     }
     if(number == 2){ 
-      this.settings.theme = 'green';
+      this.settings.theme = 'blue';
       this.settings.rtl = true;
       this.router.navigate(['/']);
     }
@@ -46,7 +46,7 @@ export class LandingComponent implements OnInit {
       this.settings.theme = 'blue'; 
     }
     if(num == 2){
-      this.settings.theme = 'green'; 
+      this.settings.theme = 'blue'; 
     }
     if(num == 3){
       this.settings.theme = 'red'; 

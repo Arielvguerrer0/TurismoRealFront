@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
   public viewCol: number = 25;
   public counts = [12, 24, 36];
   public count:any;
-  public sortings = ['Sort by Default', 'Best match', 'Lowest first', 'Highest first'];
+  public sortings = ['Ordenar por', 'Mas Vendidos', 'Menor precio'];
   public sort:any;
   public products: Array<Product> = [];
   public categories:Category[];
@@ -94,9 +94,9 @@ export class ProductsComponent implements OnInit {
     this.appService.getProducts("featured").subscribe(data=>{
       this.products = data; 
       //for show more product  
-      for (var index = 0; index < 3; index++) {
+      /* for (var index = 0; index < 3; index++) {
         this.products = this.products.concat(this.products);        
-      }
+      } */
     });
   }
 

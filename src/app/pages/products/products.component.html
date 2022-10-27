@@ -1,101 +1,4 @@
 <mat-sidenav-container>
-    <!-- <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="filter-sidenav" perfectScrollbar>
-        
-        <mat-accordion displayMode="flat" multi="true">
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Categories</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="categories-wrapper categories-dropdown" perfectScrollbar>
-                    <app-category-list [categories]="categories" [categoryParentId]="0" (change)="onChangeCategory($event)"></app-category-list>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Price</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="row" fxLayoutAlign="space-between center" class="text-muted">
-                    <span>From: <b>${{priceFrom}}</b></span>
-                    <span>To: <b>${{priceTo}}</b></span>
-                </div>
-                <div fxLayout="row" fxLayoutAlign="space-between center" class="filter-price">
-                    <mat-slider color="primary" max="2000" min="1" thumb-label="true" [(ngModel)]="priceFrom"></mat-slider>
-                    <mat-slider color="warn" max="2000" min="1" thumb-label="true" [(ngModel)]="priceTo"></mat-slider>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Color</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="filter-buttons">
-                    <button mat-raised-button *ngFor="let color of colors" [style.background]="color.name" (click)="color.selected = !color.selected">
-                        <span *ngIf="!color.selected">&nbsp;</span>
-                        <mat-icon *ngIf="color.selected">check</mat-icon>
-                    </button>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Size</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="filter-buttons">
-                    <button mat-raised-button *ngFor="let size of sizes" (click)="size.selected = !size.selected" [class.selected]="size.selected">
-                        {{size.name}}                      
-                    </button>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Condition</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="column">
-                    <mat-checkbox color="primary">New</mat-checkbox>
-                    <mat-checkbox color="primary">Used</mat-checkbox>
-                    <mat-checkbox color="primary">Not Specified</mat-checkbox>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Brands</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="filter-brands">                  
-                    <button mat-raised-button *ngFor="let brand of brands" (click)="brand.selected = !brand.selected" [class.selected]="brand.selected">
-                        <img [src]="brand.image"/>
-                    </button>
-                </div>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel expanded>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4>Now starting at $1379</h4>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div fxLayout="row wrap" fxLayoutAlign="center center">
-                   <a [routerLink]="['/products/electronics']"><img src="assets/images/products/probook/2-medium.png" alt="" class="mw-100"></a>
-                </div>
-            </mat-expansion-panel>
-
-        </mat-accordion>
-
-    </mat-sidenav> -->
     <mat-sidenav-content class="all-products" ngClass.gt-sm="p-left">
         <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="filter-row mat-elevation-z1 text-muted">
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
@@ -115,7 +18,7 @@
             </div>
             <div>
                 <a mat-button [matMenuTriggerFor]="countsMenu" #countsMenuTrigger="matMenuTrigger">
-                    Show {{count}}<mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+                    Ver {{count}}<mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
                 </a>
                 <mat-menu #countsMenu="matMenu" xPosition="before" class="app-dropdown" overlapTrigger="true">
                     <span (mouseleave)="countsMenuTrigger.closeMenu()">
@@ -139,22 +42,22 @@
         <div *ngIf="viewType == 'grid'" fxLayout="row wrap" class="products-wrapper">
             <div *ngFor="let product of products | paginate: { itemsPerPage: count, currentPage: page }" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="col">
                 <mat-card class="product-item text-center">
-                    <mat-chip-list *ngIf="product.discount">
+                    <!-- <mat-chip-list *ngIf="product.discount">
                         <mat-chip color="warn" selected="true">{{product.discount}}% OFF</mat-chip>
-                    </mat-chip-list>
-                    <a [routerLink]="['/products', product.id, product.name]" class="image-link">
+                    </mat-chip-list> -->
+                    <a class="image-link">
                         <img [src]="product.images[0].medium" alt="">
                     </a>
                     <h4 class="category text-muted">{{ ( appService.Data.categories | filterById : product.categoryId )?.name }}</h4>                                                                     
-                    <a [routerLink]="['/products', product.id, product.name]" class="title text-truncate">
+                    <p class="title text-truncate">
                         {{product.name}}
-                    </a>
+                    </p>
                     <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+                        <a>Precio por noche</a>
                         <div fxLayout="column" fxLayoutAlign="center start">
                             <p class="old-price text-muted"><span *ngIf="product.oldPrice">${{product.oldPrice | number : '1.2-2'}}</span></p>
-                            <p class="new-price">${{product.newPrice | number : '1.2-2'}}</p>
+                            <p class="new-price">${{product.newPrice | number : ''}}</p>
                         </div>
-                        <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'column'"></app-rating>
                     </div>                            
                     <div class="divider mt-2"></div>
                     <div class="icons">
@@ -170,9 +73,9 @@
                     <div fxLayout="row wrap">
                         <div fxFlex="100" fxFlex.gt-xs="40" class="p-2">
                             <mat-chip-list *ngIf="product.discount" class="list-view">
-                                <mat-chip color="warn" selected="true">{{product.discount}}% OFF</mat-chip>
+                               <!--  <mat-chip color="warn" selected="true">{{product.discount}}% OFF</mat-chip> -->
                             </mat-chip-list>
-                            <a [routerLink]="['/products', product.id, product.name]" class="image-link">
+                            <a>
                                 <img [src]="product.images[0].medium" alt="">
                             </a>
                         </div>
@@ -183,11 +86,11 @@
                             </a>
                             <p class="py-1 text-muted lh">{{product.description}}</p>
                             <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+                                <a>Precio por noche</a>
                                 <div fxLayout="column" fxLayoutAlign="center start">
-                                    <p class="old-price text-muted"><span *ngIf="product.oldPrice">${{product.oldPrice | number : '1.2-2'}}</span></p>
-                                    <p class="new-price">${{product.newPrice | number : '1.2-2'}}</p>
+                                    <p class="old-price text-muted"><span *ngIf="product.oldPrice">${{product.oldPrice | number : ''}}</span></p>
+                                    <p class="new-price">${{product.newPrice | number : ''}}</p>
                                 </div>
-                                <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'column'"></app-rating>
                             </div>                            
                             <div class="divider"></div>
                             <div class="icons">
