@@ -1,23 +1,26 @@
 <div class="mat-table orders-table">
     <div class="mat-header-row">
-      <div class="mat-header-cell">Order</div>
-      <div class="mat-header-cell">Date</div>
-      <div class="mat-header-cell">Status</div>
-      <div class="mat-header-cell">Total</div>
+      <div class="mat-header-cell">Fecha de ingreso</div>
+      <div class="mat-header-cell">Fecha de Salida</div>
+      <div class="mat-header-cell">Días</div>
+      <div class="mat-header-cell">Estado</div>
       <div class="mat-header-cell"></div>
     </div>
-    <div *ngFor="let order of orders" class="mat-row">
-      <div class="mat-cell"><span class="order">{{order.number}}</span></div>
-      <div class="mat-cell">{{order.date}}</div>
-      <div class="mat-cell">{{order.status}}</div>
-      <div class="mat-cell">{{order.total}}</div>     
+    <div *ngFor="let res of reservas" class="mat-row">
+      <div class="mat-cell">{{res.FECHA_INGRESO}}</div>
+      <div class="mat-cell">{{res.FECHA_SALIDA}}</div>
+      <div class="mat-cell">{{res.CANT_DIA_RESERVA}}</div>     
+      <div class="mat-cell">{{res.ESTADO_RESERVA}}</div>     
       <div class="mat-cell">
         <div class="p-1 actions">          
           <button mat-mini-fab color="primary" matTooltip="View">
               <mat-icon>remove_red_eye</mat-icon>
           </button>
-          <button *ngIf="order.invoice" mat-mini-fab color="warn" matTooltip="View invoice" class="btn-invoice">
-              <mat-icon>receipt</mat-icon>
+          <button type="button" mat-mini-fab color="accent" matTooltip="Editar" class="btn-invoice">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-mini-fab color="warn" matTooltip="Cancelar" class="btn-invoice" (click)="cancelarReserva(res)">
+              <mat-icon>delete</mat-icon>
           </button>
         </div>
       </div>      

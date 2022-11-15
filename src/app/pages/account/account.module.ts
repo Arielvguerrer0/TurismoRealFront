@@ -15,9 +15,9 @@ export const routes: Routes = [
       component: AccountComponent, children: [
           { path: '', redirectTo: 'information', pathMatch: 'full' },
           { path: 'dashboard', component: DashboardComponent, data: {  breadcrumb: 'Dashboard' } },
-          { path: 'information', component: InformationComponent, data: {  breadcrumb: 'Information' } },
+          { path: 'information', component: InformationComponent, data: {  breadcrumb: 'Informacion' } },
           { path: 'addresses', component: AddressesComponent, data: {  breadcrumb: 'Addresses' } },
-          { path: 'orders', component: OrdersComponent, data: {  breadcrumb: 'Orders' } }
+          { path: 'orders', component: OrdersComponent, data: {  breadcrumb: 'Reservas' } }
       ]
   }
 ];

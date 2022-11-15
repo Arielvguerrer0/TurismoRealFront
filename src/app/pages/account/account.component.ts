@@ -13,7 +13,7 @@ export class AccountComponent implements OnInit {
     /* { name: 'Account Dashboard', href: 'dashboard', icon: 'dashboard' }, */
     { name: 'Informacion de la cuenta', href: 'information', icon: 'info' },
     /* { name: 'Addresses', href: 'addresses', icon: 'location_on' }, */
-    /* { name: 'Historial de reservas', href: 'orders', icon: 'add_shopping_cart' },   */
+    { name: 'Historial de reservas', href: 'orders', icon: 'add_shopping_cart' },  
     { name: 'Logout', href: '/sign-in', icon: 'power_settings_new' },    
   ];
   constructor(public router:Router) { }

@@ -7,6 +7,8 @@ import { AppService } from '../../app.service';
 import { ReservaService } from '../../services/reserva.service';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TransbankService } from '../../services/transbank.service';
+
 
 @Component({
   selector: 'app-checkout',
@@ -35,6 +37,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     public formBuilder: UntypedFormBuilder, 
     public mediaObserver: MediaObserver,
     private reservaService :ReservaService,
+    private transbankService: TransbankService,
     public snackBar: MatSnackBar,
     
     ) {
@@ -150,11 +153,27 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   public placeOrder(){
-    this.createReserva()
+    const obj = {
+        buy_order : "62406211",
+        session_id: "84536944",
+        amount: 910219,
+        return_url : "http://127.0.0.1:8000/webPayCreate/"
+    }
+
+    this.transbankService.crearTransaccion(obj)
+      .subscribe( ( res) => {
+        console.log(res)
+      }, (err) => {
+        console.log('TREMENDO ERROR', err)
+      })
+
+
+
+    /* this.createReserva()
     this.horizontalStepper._steps.forEach(step => step.editable = false);
     this.appService.Data.cartList.length = 0;    
     this.appService.Data.totalPrice = 0;
-    this.appService.Data.totalCartCount = 0;
+    this.appService.Data.totalCartCount = 0; */
 
   }
 

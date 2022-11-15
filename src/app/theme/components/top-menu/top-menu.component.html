@@ -40,9 +40,11 @@
     </div>
     <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">
         <span (mouseleave)="accountMenuTrigger.closeMenu()">
-            <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">                   
-                <!-- <img src="assets/images/others/user.jpg" alt="user-image" width="50"> -->
-                <p>{{ user ? user.NOM_USUARIO : null }} <br> <small>{{ user ? user.CORREO_USUARIO : null }} <span *ngIf="settings.rtl">&rlm;</span></small></p>
+            <div *ngIf="this.user">
+                <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">                   
+                    <!-- <img src="assets/images/others/user.jpg" alt="user-image" width="50"> -->
+                    <p>{{ user ? user.NOM_USUARIO : null }} <br> <small>{{ user ? user.CORREO_USUARIO : null }} <span *ngIf="settings.rtl">&rlm;</span></small></p>
+                </div>
             </div>
             <div class="divider"></div>
             <a mat-menu-item routerLink="/account"> 

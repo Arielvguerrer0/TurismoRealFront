@@ -5,10 +5,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { emailValidator, matchingPasswords } from '../../theme/utils/app-validators';
 import { AuthService } from 'src/app/services/auth.service';
 import { Usuario } from '../../interfaces/user.interface';
+import * as bcrypt from 'bcrypt';
 /* import { createHash } from 'crypto'; */
 
+
+
 //Hash contraseña
-/* import { passwordHash } from 'pbkdf2-password-hash'; */
+
 
 @Component({
   selector: 'app-sign-in',
@@ -108,14 +111,14 @@ export class SignInComponent implements OnInit {
 
     /* const hash = createHash('sha256',)
     const newpass = hash.update(password);
-    console.log(newpass);
- */
+    console.log('CONTRASEÑA HASH', newpass); */
 
+    /* const salt = bcrypt.genSaltSync(10);
+    const pass = bcrypt.hashSync( password, salt);
 
-    /* passwordHash.hash(password)
-    .then((hash) => {
-      console.log('contraseña hasheada', hash)
-    }); */
+    console.log('CONTRASEÑA HASH', pass) */
+
+  
 
     const user = {
       ID_USUARIO: null,
