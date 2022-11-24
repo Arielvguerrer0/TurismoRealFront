@@ -28,17 +28,17 @@
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1"> 
-        <button mat-mini-fab matStepperNext color="primary" matTooltip="Siguiente" matTooltipPosition="after" disabled="{{this.valid}}"><mat-icon>navigate_next</mat-icon></button>
+        <button (click)="initTrasaction()" mat-mini-fab matStepperNext color="primary" matTooltip="Siguiente" matTooltipPosition="after" disabled="{{this.valid}}"><mat-icon>navigate_next</mat-icon></button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="paymentForm" label="Medio de pago">
+<!--   <mat-step [stepControl]="paymentForm" label="Medio de pago">
     <form [formGroup]="paymentForm">
       <div fxLayout="row wrap">
-        <!-- <div fxFlex="100" fxLayout="column" fxLayoutAlign="start start" class="p-1">
+        <div fxFlex="100" fxLayout="column" fxLayoutAlign="start start" class="p-1">
           <span class="text-muted">Credit Card</span>
           <img src="assets/images/others/card-icon.png" alt="">
-        </div>    -->     
+        </div>   
         <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
           <mat-form-field appearance="outline" class="w-100">
               <mat-label>Nombre del titular</mat-label>
@@ -85,10 +85,13 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1"> 
         <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
-        <button mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>       
+        <form action="{{this.transbank.url}}" method="POST">
+          <input type="hidden" name="token_ws" value="{{this.transbank.token}}">
+          <button type="submit" mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>       
+        </form>
       </div>
     </form>
-  </mat-step>
+  </mat-step> -->
   <mat-step label="Resumen">    
     <div fxLayout="row wrap">
       <div fxFlex="100" class="p-1">
@@ -122,9 +125,13 @@
     <div fxLayout="row" fxLayoutAlign="center center" class="p-1"> 
        <h2><span class="text-muted mr-1">Monto Total:</span><span>${{grandTotal | number : '1.2-2'}}</span></h2>    
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1"> 
-      <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
-      <button mat-raised-button matStepperNext color="primary" (click)="placeOrder()">Confirmar mi pedido</button>       
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+      <form action="{{this.transbank.url}}" method="POST">
+        <input type="hidden" name="token_ws" value="{{this.transbank.token}}">
+        <!-- <button type="submit" mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>    -->    
+        <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
+        <button type="submit" mat-raised-button matStepperNext color="primary" (click)="placeOrder()">Ir a pagar</button>       
+      </form>
     </div>     
   </mat-step>
   <mat-step label="Confirmacion">

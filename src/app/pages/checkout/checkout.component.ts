@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
-import { filter, map, Subscription } from 'rxjs';
+import { filter, firstValueFrom, map, Subscription } from 'rxjs';
 import { AppService } from '../../app.service';
 import { ReservaService } from '../../services/reserva.service';
 import * as moment from 'moment';
@@ -31,6 +31,12 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   Date = null;
   watcher: Subscription;
   valid: boolean = true;
+  transbank: any = {
+    token: null,
+    url: null,
+  };
+
+
 
   constructor(
     public appService:AppService, 
@@ -146,35 +152,47 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
     this.reservaService.crearReserva(body)
       .subscribe( (resp) => {
-        console.log('response', resp)
+
+        const parse = JSON.parse(resp.value)
+        console.log('response', parse)
       }, (err) => {
         console.log('tremenedo error', err);
       })
   }
 
-  public placeOrder(){
-    const obj = {
-        buy_order : "62406211",
-        session_id: "84536944",
-        amount: 910219,
-        return_url : "http://127.0.0.1:8000/webPayCreate/"
-    }
-
-    this.transbankService.crearTransaccion(obj)
-      .subscribe( ( res) => {
-        console.log(res)
-      }, (err) => {
-        console.log('TREMENDO ERROR', err)
-      })
-
-
-
+  public async placeOrder(){ 
     /* this.createReserva()
     this.horizontalStepper._steps.forEach(step => step.editable = false);
     this.appService.Data.cartList.length = 0;    
     this.appService.Data.totalPrice = 0;
     this.appService.Data.totalCartCount = 0; */
 
+  }
+
+  public async initTrasaction() {
+
+    
+    try {
+      const obj = {
+          buy_order : "62406211",
+          session_id: "84536944",
+          amount: 910219,
+          return_url : "http://127.0.0.1:8000/transbank/commit/"
+      }
+  
+      const resp = await firstValueFrom(this.transbankService.crearTransaccion(obj));
+
+      const {token, url } = resp;
+
+      this.transbank.token = token;
+      this.transbank.url = url;
+  
+      console.log('TRANBANK', this.transbank)
+      
+    } catch (error) {
+      
+      console.log('TREMENDO ERROR', error)
+    }
   }
 
 }
