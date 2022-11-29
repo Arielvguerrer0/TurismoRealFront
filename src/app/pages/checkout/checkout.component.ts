@@ -8,6 +8,7 @@ import { ReservaService } from '../../services/reserva.service';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TransbankService } from '../../services/transbank.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -45,6 +46,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     private reservaService :ReservaService,
     private transbankService: TransbankService,
     public snackBar: MatSnackBar,
+    private router: Router
     
     ) {
     this.watcher = mediaObserver.asObservable()
@@ -94,7 +96,12 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.idUser = ID_USUARIO;
     this.Date = moment(new Date() ).format('YYYY/MM/DD');
     this.valid = true;
+
+    this.commitTransaction();
+
+
   }
+
 
   validDateInit() {
     const DateInit: moment.Moment = moment(this.billingForm.get('dateInit').value);
@@ -177,7 +184,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
           buy_order : "62406211",
           session_id: "84536944",
           amount: 910219,
-          return_url : "http://127.0.0.1:8000/transbank/commit/"
+          return_url : "http://127.0.0.1:4200/checkout"
       }
   
       const resp = await firstValueFrom(this.transbankService.crearTransaccion(obj));
@@ -192,6 +199,24 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     } catch (error) {
       
       console.log('TREMENDO ERROR', error)
+    }
+  }
+
+  public async commitTransaction() {
+    const url = this.router.parseUrl(this.router.url);
+    const token = url.queryParams['token_ws'];
+    try {
+      if(token) {
+        const body = {
+          token_ws: token
+        }
+       const resp = await firstValueFrom(this.transbankService.commitTransaccion(body))
+       console.log('RESPUESTA', resp)
+      }      
+      return;
+    } catch (error) {
+      console.log('error', error)
+      
     }
   }
 
