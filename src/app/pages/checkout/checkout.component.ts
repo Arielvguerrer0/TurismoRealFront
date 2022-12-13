@@ -31,7 +31,10 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   idUser: '';
   Date = null;
   watcher: Subscription;
+  diffDays: any = null;
   valid: boolean = true;
+  total: number = 0;
+  abono: number = 0;
   transbank: any = {
     token: null,
     url: null,
@@ -97,9 +100,6 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.Date = moment(new Date() ).format('YYYY/MM/DD');
     this.valid = true;
 
-    this.commitTransaction();
-
-
   }
 
 
@@ -131,8 +131,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       this.valid = false
     }
 
-    const diff = DateEnd.diff(DateInit, 'days') + 1;
-    this.billingForm.get('cantDias').setValue(diff) 
+    this.diffDays = DateEnd.diff(DateInit, 'days') + 1;
+    this.billingForm.get('cantDias').setValue(this.diffDays) 
 
   }
   ngOnDestroy() { 
@@ -140,7 +140,6 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   createReserva(){ 
-    console.log('next')
     const { id } = this.productAux;
     const DateInit: string = moment(this.billingForm.get('dateInit').value).format('YYYY/MM/DD');
     const DateEnd: string = moment(this.billingForm.get('dateEnd').value).format('YYYY/MM/DD');
@@ -148,20 +147,17 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     const body = {
         FECHA_INGRESO: DateInit,
         FECHA_SALIDA: DateEnd,
-        CANT_DIA_RESERVA: 5,
+        CANT_DIA_RESERVA: this.diffDays,
         ESTADO_RESERVA: "1",
         FECHA_ESTADO_RESERVA: this.Date,
         DEPARTAMENTO_ID_DEPARTAMENTO: id,
         USUARIO_ID_USUARIO: this.idUser
     }
 
-    console.log(body)
 
     this.reservaService.crearReserva(body)
       .subscribe( (resp) => {
-
         const parse = JSON.parse(resp.value)
-        console.log('response', parse)
       }, (err) => {
         console.log('tremenedo error', err);
       })
@@ -178,46 +174,30 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   public async initTrasaction() {
 
-    
+    this.total = this.grandTotal*this.diffDays;
+    // Para reservar se debe cobrar el 50% del total de la compra.
+    this.abono = (this.total*0.5);
+
     try {
       const obj = {
           buy_order : "62406211",
           session_id: "84536944",
-          amount: 910219,
-          return_url : "http://127.0.0.1:4200/checkout"
+          amount: this.abono,
+          return_url : "http://127.0.0.1:4200/detalle"
       }
   
       const resp = await firstValueFrom(this.transbankService.crearTransaccion(obj));
+      if( resp ) {
+        this.createReserva()
+       };
 
       const {token, url } = resp;
 
       this.transbank.token = token;
       this.transbank.url = url;
-  
-      console.log('TRANBANK', this.transbank)
-      
-    } catch (error) {
-      
+    
+    } catch (error) {   
       console.log('TREMENDO ERROR', error)
     }
   }
-
-  public async commitTransaction() {
-    const url = this.router.parseUrl(this.router.url);
-    const token = url.queryParams['token_ws'];
-    try {
-      if(token) {
-        const body = {
-          token_ws: token
-        }
-       const resp = await firstValueFrom(this.transbankService.commitTransaccion(body))
-       console.log('RESPUESTA', resp)
-      }      
-      return;
-    } catch (error) {
-      console.log('error', error)
-      
-    }
-  }
-
 }

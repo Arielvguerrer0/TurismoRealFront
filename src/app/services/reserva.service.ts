@@ -14,11 +14,15 @@ export class ReservaService{
         return this.http.post<any>(`api/reserva/crear`, reseva);
     }
 
-    eliminarReserva( reserva: any, id ): Observable<any>{
+    eliminarReserva( reserva: any, id: any ): Observable<any>{
         return this.http.post<any>(`api/reserva/modificar/${id}`, reserva);
     }
 
     listarReservaUsuario( id: number ): Observable<any>{
         return this.http.get<any>(`api/reservausuario/${id}`, );
+    }
+
+    listarUltimaReserva(): Observable<any>{
+        return this.http.get<any>(`api/listarReservaID/`);
     }
 }

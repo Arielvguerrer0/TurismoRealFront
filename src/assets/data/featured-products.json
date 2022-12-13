@@ -130,5 +130,137 @@
         "size": ["13.3''","15.4''","17''"],
         "weight": 2150,
         "categoryId": 100
+    },
+    { 
+        "id": 5,
+        "name": "Isla damas y punta choros",
+        "images": [
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourisla1.jpg",
+                "big": "assets/images/products/probook/1-big.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourisla2.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourisla3.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            }
+        ],
+        "oldPrice": null,
+        "newPrice": 30000,
+        "discount": 20,
+        "ratingsCount": 6,
+        "ratingsValue": 500,
+        "description": "Conozca la fauna de la costa de Chile en esta excursión de día completo desde La Serena, que incluye la recogida en el hotel. Durante el trayecto, atravesaremos en el vehículo coloridos campos de flores silvestres del desierto (en función de la temporada) y después navegaremos alrededor de las islas barridas por el viento Gaviota, Choros y Damas.",
+        "availibilityCount": 2,
+        "cartCount": 0,
+        "color": ["#4C4C4C","#B6B7B9"],
+        "size": ["13.3''","15.4''","17''"],
+        "weight": 2150,
+        "categoryId": 100
+    },
+    { 
+        "id": 5,
+        "name": "Termas geometricas Valdivia",
+        "images": [
+            {
+                "small": "assets/images/products/probook/tourvilla1.jpg",
+                "medium": "assets/images/products/probook/tourvilla1.jpg",
+                "big": "assets/images/products/probook/1-big.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvilla2.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvilla3.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            }
+        ],
+        "oldPrice": null,
+        "newPrice": 30000,
+        "discount": 20,
+        "ratingsCount": 6,
+        "ratingsValue": 500,
+        "description": "Los maravillosos paisajes del sur de Chile hacen de esta una actividad única. Gozamos de las mejores vistas, y terminamos la actividad con un baño termal en un entorno de ensueño.",
+        "availibilityCount": 2,
+        "cartCount": 0,
+        "color": ["#4C4C4C","#B6B7B9"],
+        "size": ["13.3''","15.4''","17''"],
+        "weight": 2150,
+        "categoryId": 100
+    },
+    { 
+        "id": 6,
+        "name": "Escalada Volcán Villarica",
+        "images": [
+            {
+                "small": "assets/images/products/probook/tourvilla1.jpg",
+                "medium": "assets/images/products/probook/tourvolcan1.jpg",
+                "big": "assets/images/products/probook/1-big.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvolcan2.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvolcan3.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            }
+        ],
+        "oldPrice": null,
+        "newPrice": 50000,
+        "discount": 20,
+        "ratingsCount": 6,
+        "ratingsValue": 500,
+        "description": "Escala uno de los volcanes activos de América del Sur en esta aventura. Estarás seguro y cómodo durante toda la experiencia en compañía del Guía Principal. Equipado con más de una década de experiencia en escalada, está pacientemente comprometido a ayudar a cada cliente a alcanzar la cima.",
+        "availibilityCount": 2,
+        "cartCount": 0,
+        "color": ["#4C4C4C","#B6B7B9"],
+        "size": ["13.3''","15.4''","17''"],
+        "weight": 2150,
+        "categoryId": 100
+    },
+    { 
+        "id": 7,
+        "name": "Cerros de valparaíso",
+        "images": [
+            {
+                "small": "assets/images/products/probook/tourvilla1.jpg",
+                "medium": "assets/images/products/probook/tourvalpo1.jpg",
+                "big": "assets/images/products/probook/1-big.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvalpo2.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            },
+            {
+                "small": "assets/images/products/probook/tourisla1.jpg",
+                "medium": "assets/images/products/probook/tourvalpo3.jpg",
+                "big": "assets/images/products/probook/ptovaras3.png"
+            }
+        ],
+        "oldPrice": null,
+        "newPrice": 25000,
+        "discount": 20,
+        "ratingsCount": 6,
+        "ratingsValue": 500,
+        "description": "Descubriremos esta ciudad Patrimonio de la Humanidad en un tour de lo más completo por Valparaíso. Conoceremos sus monumentos más emblemáticos y algunos de los rincones secretos de los porteños.",
+        "availibilityCount": 2,
+        "cartCount": 0,
+        "color": ["#4C4C4C","#B6B7B9"],
+        "size": ["13.3''","15.4''","17''"],
+        "weight": 2150,
+        "categoryId": 100
     }
 ]

@@ -32,66 +32,6 @@
       </div>
     </form>
   </mat-step>
-<!--   <mat-step [stepControl]="paymentForm" label="Medio de pago">
-    <form [formGroup]="paymentForm">
-      <div fxLayout="row wrap">
-        <div fxFlex="100" fxLayout="column" fxLayoutAlign="start start" class="p-1">
-          <span class="text-muted">Credit Card</span>
-          <img src="assets/images/others/card-icon.png" alt="">
-        </div>   
-        <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
-          <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Nombre del titular</mat-label>
-              <input matInput placeholder="Nombre del titular" formControlName="cardHolderName" required>
-              <mat-error *ngIf="paymentForm.controls.cardHolderName.errors?.required">Nombre del titular es obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-        <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
-          <mat-form-field appearance="outline" class="w-100">
-              <mat-label>N° de Tarjeta</mat-label>
-              <input matInput placeholder="Numero de la tarjeta" formControlName="cardNumber" required>
-              <mat-error *ngIf="paymentForm.controls.cardNumber.errors?.required">Numero de la tarjeta es obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
-          <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Mes de expiracion</mat-label>
-              <mat-select placeholder="Mes de expiracion" formControlName="expiredMonth" required>
-                <mat-option *ngFor="let month of months" [value]="month.value">
-                    {{month.name}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="paymentForm.controls.expiredMonth.errors?.required">Mes de expiracion es obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
-          <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Año de expiracion</mat-label>
-              <mat-select placeholder="Año de expiracion" formControlName="expiredYear" required>
-                <mat-option *ngFor="let year of years" [value]="year">
-                    {{year}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="paymentForm.controls.expiredYear.errors?.required">Año de expiracion es obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
-          <mat-form-field appearance="outline" class="w-100">
-              <mat-label>CVV</mat-label>
-              <input matInput placeholder="CVV" formControlName="cvv" required>
-              <mat-error *ngIf="paymentForm.controls.cvv.errors?.required">CVV obligatorio</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1"> 
-        <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
-        <form action="{{this.transbank.url}}" method="POST">
-          <input type="hidden" name="token_ws" value="{{this.transbank.token}}">
-          <button type="submit" mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>       
-        </form>
-      </div>
-    </form>
-  </mat-step> -->
   <mat-step label="Resumen">    
     <div fxLayout="row wrap">
       <div fxFlex="100" class="p-1">
@@ -108,9 +48,9 @@
           <div *ngFor="let product of appService.Data.cartList" class="mat-row">
             <div class="mat-cell"><img [src]="product.images[0].small"></div>
             <div class="mat-cell">{{product.name}}</div>
-            <div class="mat-cell">${{product.newPrice | number : '1.2-2'}}</div>      
-            <div class="mat-cell text-muted"> {{product.cartCount}} </div>
-            <div class="mat-cell">${{ (product.newPrice*product.cartCount) | number : '1.2-2'}}</div>
+            <div class="mat-cell">${{product.newPrice | number : '1.0-0'}}</div>      
+            <div class="mat-cell text-muted"> {{this.diffDays}} </div>
+            <div class="mat-cell">${{ (product.newPrice*this.diffDays) | number : '1.0-0'}}</div>
           </div>
         </div>
       </div> 
@@ -123,7 +63,7 @@
       </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="center center" class="p-1"> 
-       <h2><span class="text-muted mr-1">Monto Total:</span><span>${{grandTotal | number : '1.2-2'}}</span></h2>    
+       <h2><span class="text-muted mr-1">Monto para reservar:</span><span>${{this.abono | number : '1.0-0'}}</span></h2>    
     </div>
     <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
       <form action="{{this.transbank.url}}" method="POST">
@@ -133,16 +73,5 @@
         <button type="submit" mat-raised-button matStepperNext color="primary" (click)="placeOrder()">Ir a pagar</button>       
       </form>
     </div>     
-  </mat-step>
-  <mat-step label="Confirmacion">
-    <div fxLayout="column" fxLayoutAlign="center center" class="p-2 text-center"> 
-      <button mat-fab color="primary"><mat-icon>check</mat-icon></button>
-      <h2 class="py-2">Felicidades, se creo su reserva con exito</h2>
-      <p class="text-muted">Gracias por preferirnos, esperamos que disfrutes tu instancia en nuestras instalaciones.</p>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1"> 
-      <a [routerLink]="['/']" mat-raised-button color="primary">Volver al home</a>       
-    </div>
-     
   </mat-step>
 </mat-stepper>
